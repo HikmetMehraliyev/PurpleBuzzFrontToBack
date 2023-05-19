@@ -104,29 +104,33 @@ public class ServicesController : Controller
         return RedirectToAction(nameof(Index));
     }
 
-    public async Task<IActionResult> Delete(int id)
-    {
-        CreateServiceVm createServiceVm = new CreateServiceVm()
-        {
-            Categories = _categories
-        };
+    //public async Task<IActionResult> Delete(int id)
+    //{
+    //    CreateServiceVm createServiceVm = new CreateServiceVm()
+    //    {
+    //        Categories = _categories
+    //    };
 
-        Service service = await _context.Services.FindAsync(id);
-        if (service == null) return NotFound();
-        string imagePath = Path.Combine(_enviroment.WebRootPath, "assets", "img", service.ServiceImages.Path);
-        if (System.IO.File.Exists(imagePath))
-        {
-            System.IO.File.Delete(imagePath);
-        }
-        if (_categories == null)
-        {
-            return NotFound();
-        }
+    //    Service service = await _context.Services.FindAsync(id);
+    //    if (service == null) return NotFound();
+    //    string imagePath = Path.Combine(_enviroment.WebRootPath, "assets", "img", service.ServiceImages.Path);
+    //    foreach (var item in ServiceImages)
+    //    {
 
-        _context.Services.Remove(service);
-        await _context.SaveChangesAsync();
-        return RedirectToAction(nameof(Index));
-    }
+    //    }
+    //    if (System.IO.File.Exists(imagePath))
+    //    {
+    //        System.IO.File.Delete(imagePath);
+    //    }
+    //    if (_categories == null)
+    //    {
+    //        return NotFound();
+    //    }
+
+    //    _context.Services.Remove(service);
+    //    await _context.SaveChangesAsync();
+    //    return RedirectToAction(nameof(Index));
+    //}
 
 
 

@@ -15,5 +15,5 @@ public class AppDbContext:DbContext
     public DbSet<Service> Services { get; set; }
     public DbSet<ServiceImage> ServiceImages { get; set; }
     public DbSet<TeamMember> TeamMembers { get; set; }
-
+    public DbSet<Works> Works { get; set; }
 }

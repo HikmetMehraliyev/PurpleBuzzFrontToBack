@@ -4,8 +4,12 @@
 }
 
 <section class="container overflow-hidden py-5">
-    <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
+    <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 ">
         <partial name="_ServicesPartialView" model="Model"/>
         @*@Html.Partial("_ServicesPartialView",Model)*@
+        <div class="d-flex justify-content-center ">
+            <a id="btnLoadMore" class="btn btn-outline-primary ">Load More</a>
+        </div>
     </div>
+    <input id="dbServiceCount" value="@ViewBag.dbServiceCount" type="hidden">
 </section>

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebFrontToBack.DAL;
 
@@ -11,9 +12,10 @@ using WebFrontToBack.DAL;
 namespace WebFrontToBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230519051335_createWorksPages")]
+    partial class createWorksPages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,7 +42,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.Service", b =>
@@ -72,7 +74,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.ServiceImage", b =>
@@ -97,7 +99,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("ServiceImages", (string)null);
+                    b.ToTable("ServiceImages");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.Slider", b =>
@@ -125,7 +127,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders", (string)null);
+                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.TeamMember", b =>
@@ -151,7 +153,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TeamMembers", (string)null);
+                    b.ToTable("TeamMembers");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.Works", b =>
@@ -179,7 +181,7 @@ namespace WebFrontToBack.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Works", (string)null);
+                    b.ToTable("Works");
                 });
 
             modelBuilder.Entity("WebFrontToBack.Models.Service", b =>

@@ -1,0 +1,13 @@
+﻿@model List<Works>
+@{
+    ViewData["Title"] = "Works";
+}
+
+<section class="py-5 mb-5">
+    <div class="container">
+        <div class="recent-work-header row text-center pb-5">
+            <h2 class="col-md-6 m-auto h2 semi-bold-600 py-5">Recent Works</h2>
+        </div>
+        <partial name="_WorksPartialView" model="Model" />
+    </div>
+</section>
